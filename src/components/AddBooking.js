@@ -42,6 +42,11 @@ export const Button = styled.input`
     height:30px;
     margin-top:10px;
     margin-right:10px;
+    border: 1px solid #118eed;
+    border-radius: 5px;
+    box-shadow: 0 6px 12px rgb(17, 142, 237,0.2);
+    background-color: rgb(17, 142, 237,0.16);
+    cursor: pointer;
 
 `
 

@@ -1,6 +1,8 @@
 import {Link} from 'react-router-dom'
 import styled from 'styled-components';
 import {useLocation} from 'react-router-dom'
+import {AiFillHome} from 'react-icons/ai';
+import {BsFillBookmarkPlusFill,BsFillQuestionCircleFill} from 'react-icons/bs'
 
 const SideContainer = styled.div`
     display: flex;
@@ -17,17 +19,32 @@ const SideContainer = styled.div`
 `
 
 const LinkContainer = styled(Link)`
-   color:${({routed})=>routed ==="true" ?'blue':'black'};
-   margin: 5px;
+   color:${({routed})=>routed ==="true" ?'#118eed':'black'};
+   margin: 8px;
    text-decoration: none;
+`
+const PanelItemContainer = styled.div`
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    
 `
 const SidePanel = () =>{
     const location = useLocation();
     return(
         <SideContainer>
-            <LinkContainer to='/' routed={location.pathname === '/'?"true":"false"}>Home</LinkContainer>
-            <LinkContainer to='/addbooking' routed={location.pathname === '/addbooking'?"true":"false"}>Add Booking</LinkContainer>
-            <LinkContainer to='/check' routed={location.pathname === '/check'?"true":"false"}>Check Room</LinkContainer>
+            <PanelItemContainer>
+                <AiFillHome color='#118eed'/>
+                <LinkContainer to='/' routed={location.pathname === '/'?"true":"false"}>Home</LinkContainer>
+            </PanelItemContainer>
+            <PanelItemContainer>
+                <BsFillBookmarkPlusFill color='#118eed'/>
+                <LinkContainer to='/addbooking' routed={location.pathname === '/addbooking'?"true":"false"}>Add Booking</LinkContainer>
+            </PanelItemContainer>
+            <PanelItemContainer>
+                <BsFillQuestionCircleFill color='#118eed'/>
+                <LinkContainer to='/check' routed={location.pathname === '/check'?"true":"false"}>Check Room</LinkContainer>
+            </PanelItemContainer>  
         </SideContainer>
         
     )

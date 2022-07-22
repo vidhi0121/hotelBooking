@@ -6,12 +6,15 @@ const HeaderContainer = styled.div`
     align-items: center;
     justify-content:flex-start;
     margin-left: 40px;
+    h2{
+        margin-left:5px;
+    }
 `
 
 const Header = () => {
     return(
         <HeaderContainer>
-            <FaHotel size={30} color='blue'/>
+            <FaHotel size={30} color='#118eed'/>
             <h2>Booking System</h2>
         </HeaderContainer>
     )
