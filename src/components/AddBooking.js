@@ -131,6 +131,9 @@ const AddBooking = () => {
                     position: toast.POSITION.TOP_RIGHT
                 });
             }
+            setRoom(null);
+            setselectedDate(null);
+            setSurname(null);
         })
     }
 
